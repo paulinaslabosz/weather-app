@@ -19,10 +19,8 @@ let url
 
 const getWeather = () =>
 {
-
- // city = input.value;
- city = 'London'
- url = link + city + key + metric
+ city = (!input.value) ? 'New York' : input.value;
+  url = link + city + key + metric
  
  axios.get(url) 
  .then (res =>{
@@ -35,7 +33,6 @@ const getWeather = () =>
      temperature.textContent = temp + '°C';
      humidity.textContent = hum + '%';
      weather.textContent = status.main;
-     console.log(status);
 
      if (status.id >= 200 && status.id < 300) {
          image.setAttribute('src', '/images/thunderstorm.png')
@@ -55,11 +52,16 @@ const getWeather = () =>
          image.setAttribute('src', '/image/unknown.png')
      }
 
-
-
     })
+.catch(err => {
+    warn.textContent = "Wprowadź poprawną wartość"
+})
+input.value = ""
 }
 
 
 
+
+
 getWeather()
+button.addEventListener('click', getWeather)
