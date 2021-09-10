@@ -34,6 +34,9 @@ const getWeather = () =>
      humidity.textContent = hum + '%';
      weather.textContent = status.main;
 
+   
+     warn.textContent = ""
+
      if (status.id >= 200 && status.id < 300) {
          image.setAttribute('src', '/images/thunderstorm.png')
      } else if (status.id >= 300 && status.id < 500) {
@@ -55,13 +58,23 @@ const getWeather = () =>
     })
 .catch(err => {
     warn.textContent = "Wprowadź poprawną wartość"
+    
 })
+
 input.value = ""
+}
+
+
+const checkEnter = (e) => {
+    if(e.key === 'Enter') {
+        getWeather()
+    }
 }
 
 
 
 
-
 getWeather()
+
 button.addEventListener('click', getWeather)
+input.addEventListener('keyup', checkEnter);
