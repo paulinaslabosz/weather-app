@@ -38,21 +38,21 @@ const getWeather = () =>
      warn.textContent = ""
 
      if (status.id >= 200 && status.id < 300) {
-         image.setAttribute('src', '../images/thunderstorm.png')
+         image.setAttribute('src', './images/thunderstorm.png')
      } else if (status.id >= 300 && status.id < 500) {
-        image.setAttribute('src', '../images/drizzle.png')
+        image.setAttribute('src', './images/drizzle.png')
      } else if (status.id >= 500 && status.id < 600) {
-        image.setAttribute('src', '../images/rain.png')
+        image.setAttribute('src', './images/rain.png')
      } else if (status.id >= 600 && status.id < 700) {
-        image.setAttribute('src', '../images/ice.png')
+        image.setAttribute('src', './images/ice.png')
      } else if (status.id >= 701 && status.id < 800) {
-        image.setAttribute('src', '../images/fog.png')
+        image.setAttribute('src', './images/fog.png')
      } else if (status.id === 800) {
-        image.setAttribute('src', '../images/sun.png')
+        image.setAttribute('src', './images/sun.png')
      } else if (status.id >= 801 && status.id < 805) {
-        image.setAttribute('src', '../images/cloud.png')
+        image.setAttribute('src', './images/cloud.png')
      } else {
-         image.setAttribute('src', '../image/unknown.png')
+         image.setAttribute('src', './images/unknown.png')
      }
 
     })
